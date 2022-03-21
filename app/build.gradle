@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -42,5 +43,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation("de.hdodenhof:circleimageview:2.1.0")
     runtimeOnly("com.google.android.material:material:1.4.0")
+    implementation 'com.hivemq:hivemq-mqtt-client:1.2.1'
 
 }
