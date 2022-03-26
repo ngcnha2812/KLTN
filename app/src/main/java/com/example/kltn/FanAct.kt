@@ -1,12 +1,10 @@
 package com.example.kltn
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.widget.Button
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
-import io.grpc.internal.JsonParser
 
 class FanAct : AppCompatActivity() {
     private lateinit var database: DatabaseReference
@@ -14,12 +12,8 @@ class FanAct : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fan)
-        database = Firebase.database(Constants.databaseURL).reference
-        database.child("Fan").child("Samsung").get().addOnSuccessListener {
-           Log.d("firebase","${it.value}")
-        }.addOnFailureListener {
-            Log.d("error","Error occured")
+        findViewById<Button>(R.id.F_Learn).setOnClickListener {
+            startActivity(Intent(this,LearnCode::class.java))
         }
-
     }
 }

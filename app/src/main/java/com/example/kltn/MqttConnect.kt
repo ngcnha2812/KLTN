@@ -33,5 +33,4 @@ object MqttConnect  {
             .payload(UTF_8.encode(message))
             .send();
     }
-
 }
