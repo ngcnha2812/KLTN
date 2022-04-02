@@ -14,8 +14,12 @@ class Menu : AppCompatActivity() {
         val air:ImageView = findViewById(R.id.air)
 
         val MeFan = Intent(this,FanAct::class.java)
-        fan.setOnClickListener {
+        fan.setOnClickListener{
             startActivity(MeFan)
+        }
+        val MeTV = Intent(this,TVAct::class.java)
+        tv.setOnClickListener{
+            startActivity(MeTV)
         }
     }
 

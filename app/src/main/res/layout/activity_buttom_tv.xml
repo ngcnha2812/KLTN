@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Buttom_TV_Act">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:background="@color/brown"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/backtv"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                app:iconGravity="textStart"
+                android:gravity="center"
+                app:icon="@drawable/left_icon"
+                app:iconTint="@color/white"
+                android:backgroundTint="@color/brown"
+                app:iconSize="30dp"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:fontFamily="@font/gabton"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="66dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/source"
+                app:cornerRadius="50dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                app:iconPadding="0dp"
+                app:iconGravity="textStart"
+                android:gravity="center"
+                android:backgroundTint="#008000"
+                app:icon="@drawable/source_icon" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/menu"
+                app:cornerRadius="50dp"
+                android:layout_width="50dp"
+                android:layout_marginLeft="75dp"
+                android:layout_gravity="center"
+                app:iconPadding="0dp"
+                app:iconGravity="textStart"
+                android:gravity="center"
+                android:backgroundTint="#4169E1"
+                android:layout_height="50dp"
+                app:icon="@drawable/menu_icon" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/power"
+                app:cornerRadius="50dp"
+                android:layout_width="50dp"
+                android:layout_marginLeft="75dp"
+                android:layout_gravity="center"
+                app:iconPadding="0dp"
+                app:iconGravity="textStart"
+                android:gravity="center"
+                android:backgroundTint="#FF0000"
+                android:layout_height="50dp"
+                app:icon="@drawable/power_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Up"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/black"
+                android:gravity="center"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:icon="@drawable/up_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/left"
+                android:layout_width="50dp"
+                android:layout_gravity="center"
+                app:iconPadding="0dp"
+                app:iconGravity="textStart"
+                android:gravity="center"
+                android:backgroundTint="@color/black"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/left_icon" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ok"
+                app:cornerRadius="50dp"
+                android:layout_width="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                app:iconPadding="0dp"
+                app:iconGravity="textStart"
+                android:gravity="center"
+                android:backgroundTint="@color/black"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ok_icon" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/right"
+                android:layout_width="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                app:iconPadding="0dp"
+                app:iconGravity="textStart"
+                android:gravity="center"
+                android:backgroundTint="@color/black"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/right_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/down"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/black"
+                android:gravity="center"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:icon="@drawable/down_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="66dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/back"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:iconPadding="0dp"
+                android:backgroundTint="@color/black"
+                app:iconGravity="textStart"
+                android:gravity="center"
+                app:icon="@drawable/back_icon" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/exit"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="200dp"
+                app:iconPadding="0dp"
+                android:backgroundTint="@color/black"
+                app:iconGravity="textStart"
+                android:gravity="center"
+                app:icon="@drawable/exit_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/volup"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/black"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    app:icon="@drawable/volup_icon"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/voldown"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/black"
+                    android:gravity="center"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:icon="@drawable/voldown_icon" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/setting"
+                android:layout_width="50dp"
+                app:iconPadding="0dp"
+                android:backgroundTint="@color/black"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="45dp"
+                app:iconGravity="textStart"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/setting_icon" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/chup"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/black"
+                    android:gravity="center"
+                    app:iconGravity="textEnd"
+                    app:iconPadding="0dp"
+                    android:text="CH"
+                    app:icon="@drawable/chup_icon" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/chdown"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/black"
+                    android:gravity="center"
+                    app:iconGravity="textEnd"
+                    app:iconPadding="0dp"
+                    android:text="CH"
+                    app:icon="@drawable/chdown_icon" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/num7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:text="7" />
+
+                <Button
+                    android:id="@+id/num8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginLeft="5dp"
+                    android:text="8" />
+
+                <Button
+                    android:id="@+id/num9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginLeft="5dp"
+                    android:text="9" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/num4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:text="4" />
+
+                <Button
+                    android:id="@+id/num5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginLeft="5dp"
+                    android:text="5" />
+
+                <Button
+                    android:id="@+id/num6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginLeft="5dp"
+                    android:text="6" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/num1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/num2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginLeft="5dp"
+                    android:text="2" />
+
+                <Button
+                    android:id="@+id/num3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginLeft="5dp"
+                    android:text="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/ttv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:text="TV" />
+
+                <Button
+                    android:id="@+id/num0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginLeft="5dp"
+                    android:text="0" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/mute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginLeft="5dp"
+                    app:iconGravity="textStart"
+                    android:gravity="center"
+                    app:iconPadding="0dp"
+                    app:icon="@drawable/mute_icon" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

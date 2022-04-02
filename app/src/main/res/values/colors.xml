@@ -10,4 +10,7 @@
     <color name="sky">#663399FF</color>
     <color name="pink">#FFFF66FF</color>
     <color name="pink2">#EDFF66FF</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="brown">#BC8F8F</color>
+    <color name="background">#DD292426</color>
 </resources>

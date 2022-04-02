@@ -14,6 +14,12 @@
         android:theme="@style/Theme.KLTN"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".TVAct"
+            android:exported="false" />
+        <activity
+            android:name=".Buttom_TV_Act"
+            android:exported="false" />
+        <activity
             android:name=".LearnCode"
             android:exported="false" />
         <activity
