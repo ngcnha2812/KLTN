@@ -16,7 +16,7 @@ class Buttom_TV_Act : AppCompatActivity() {
         setContentView(R.layout.activity_buttom_tv)
         val name = intent.extras?.get("hang")
         mqttClient.Connect("TV")
-        mqttClient.Async()
+
         val backtv: Button = findViewById(R.id.backtv)
         val menu: Button = findViewById(R.id.menu)
         val power: Button = findViewById(R.id.power)
