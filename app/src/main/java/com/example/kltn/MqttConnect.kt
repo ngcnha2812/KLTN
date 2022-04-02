@@ -42,6 +42,12 @@ object MqttConnect  {
             model.addCode(it.topic.toString(), UTF_8.decode(it.payload.get()).toString())
         })
     }
+
+    public fun Async(){
+        client.toAsync().publishes(MqttGlobalPublishFilter.ALL, Consumer {
+            System.out.println("Received message: " + it.getTopic() + " -> " + UTF_8.decode(it.getPayload().get()));
+            })
+    }
     public fun Disconnect(){
         client.disconnect()
     }
