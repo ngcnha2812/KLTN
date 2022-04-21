@@ -20,12 +20,13 @@ class LearnCode : AppCompatActivity() {
         setContentView(R.layout.activity_learn_code)
         client.Connect("Learn")
         client.Async(model)
+        var type = findViewById<EditText>(R.id.typeName)
         var mftName = findViewById<EditText>(R.id.mftName)
         var codeName = findViewById<EditText>(R.id.codeName)
         var code = findViewById<EditText>(R.id.code)
 
         findViewById<Button>(R.id.codeSubmit).setOnClickListener {
-            addCode(mftName.text.toString(),codeName.text.toString(),code.text.toString())
+            addCode(type.text.toString(),mftName.text.toString(),codeName.text.toString(),code.text.toString())
             mftName.setText("")
             codeName.setText("")
             code.setText("")
@@ -35,9 +36,9 @@ class LearnCode : AppCompatActivity() {
         })
     }
 
-    private  fun addCode(mftName:String,codeName:String,code:String){
+    private  fun addCode(type:String,mftName:String,codeName:String,code:String){
         database = Firebase.database(Constants.databaseURL).reference
-        database.child("Fan").child(mftName).child(codeName).setValue(code).addOnSuccessListener {
+        database.child(type).child(mftName).child(codeName).setValue(code).addOnSuccessListener {
             Toast.makeText(this,"Success",Toast.LENGTH_SHORT).show()
         }.addOnFailureListener {
             Toast.makeText(this,"Failed! Try again",Toast.LENGTH_SHORT).show()

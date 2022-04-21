@@ -3,17 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/KLTN/Project/app/src/main/res/drawable/backtv_icon.xml" value="0.2" />
-        <entry key="..\:/KLTN/Project/app/src/main/res/drawable/power_icon.xml" value="0.2245" />
-        <entry key="..\:/KLTN/Project/app/src/main/res/drawable/right_icon.xml" value="0.2245" />
-        <entry key="..\:/KLTN/Project/app/src/main/res/drawable/tab.xml" value="0.2265" />
-        <entry key="..\:/KLTN/Project/app/src/main/res/layout/activity_buttom_tv.xml" value="0.1" />
         <entry key="..\:/KLTN/Project/app/src/main/res/layout/activity_fan.xml" value="0.1" />
-        <entry key="..\:/KLTN/Project/app/src/main/res/layout/activity_learn_code.xml" value="0.12360688956433637" />
         <entry key="..\:/KLTN/Project/app/src/main/res/layout/activity_main.xml" value="0.22327898550724637" />
-        <entry key="..\:/KLTN/Project/app/src/main/res/layout/activity_menu.xml" value="0.176" />
-        <entry key="..\:/KLTN/Project/app/src/main/res/layout/activity_tvact.xml" value="0.25416666666666665" />
+        <entry key="..\:/KLTN/Project/app/src/main/res/layout/activity_menu.xml" value="0.1" />
         <entry key="..\:/KLTN/Project/app/src/main/res/layout/splash.xml" value="0.1" />
+        <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_buttom_tv.xml" value="0.264" />
+        <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_fan.xml" value="0.1" />
+        <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_learn_code.xml" value="0.1388888888888889" />
+        <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_menu.xml" value="0.129981884057971" />
+        <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_tvact.xml" value="0.1" />
+        <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/button_item.xml" value="0.2421875" />
       </map>
     </option>
   </component>

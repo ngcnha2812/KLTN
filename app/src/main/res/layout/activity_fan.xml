@@ -33,74 +33,77 @@
             android:textSize="50dp" />
 
     </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="499dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="499dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/F_Midea"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="80dp"
-            android:backgroundTint="@color/sky"
-            app:cornerRadius="15dp"
-            android:text="Midea"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="40dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/F_Midea"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="80dp"
+                android:backgroundTint="@color/sky"
+                android:text="Midea"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="40dp"
+                app:cornerRadius="15dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/F_Asia"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="80dp"
-            android:backgroundTint="@color/sky"
-            app:cornerRadius="15dp"
-            android:text="Asia"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="40dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/F_Asia"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="80dp"
+                android:backgroundTint="@color/sky"
+                android:text="Asia"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="40dp"
+                app:cornerRadius="15dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/F_Tefal"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="80dp"
-            android:backgroundTint="@color/sky"
-            app:cornerRadius="15dp"
-            android:text="Tefal"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="40dp" />
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/F_Learn"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="80dp"
-            android:backgroundTint="@color/sky"
-            app:cornerRadius="15dp"
-            android:text="Learn"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="40dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/F_Tefal"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="80dp"
+                android:backgroundTint="@color/sky"
+                android:text="Tefal"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="40dp"
+                app:cornerRadius="15dp" />
 
-    </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/F_Learn"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="80dp"
+                android:backgroundTint="@color/sky"
+                android:text="Learn"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="40dp"
+                app:cornerRadius="15dp" />
+
+        </LinearLayout>
     </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="87dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <ImageView

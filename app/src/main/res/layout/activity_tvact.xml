@@ -35,54 +35,19 @@
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="499dp"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/TV_Midea"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="80dp"
-                android:backgroundTint="@color/sky"
-                app:cornerRadius="15dp"
-                android:text="Midea"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="40dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/TV_Asia"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="80dp"
-                android:backgroundTint="@color/sky"
-                app:cornerRadius="15dp"
-                android:text="Asia"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="40dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/TV_Tefal"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="80dp"
-                android:backgroundTint="@color/sky"
-                app:cornerRadius="15dp"
-                android:text="Tefal"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="40dp" />
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
     </ScrollView>
 
@@ -95,7 +60,7 @@
             android:layout_width="200px"
             android:layout_height="200px"
             android:layout_gravity="bottom"
-            android:src="@drawable/penguin"></ImageView>
+            android:src="@drawable/penguin"/>
     </LinearLayout>
 
 </LinearLayout>
