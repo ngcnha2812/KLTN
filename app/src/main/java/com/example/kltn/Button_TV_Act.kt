@@ -99,6 +99,16 @@ class Button_TV_Act : AppCompatActivity() {
                 mqttClient.Send("Customs","${it.value.toString()}/$protocol/$bitnum")
             }
         }
+        voldown.setOnClickListener {
+            dataBase.child("$name/Voldown").get().addOnSuccessListener {
+                mqttClient.Send("Customs","${it.value.toString()}/$protocol/$bitnum")
+            }
+        }
+        volup.setOnClickListener {
+            dataBase.child("$name/Volup").get().addOnSuccessListener {
+                mqttClient.Send("Customs","${it.value.toString()}/$protocol/$bitnum")
+            }
+        }
     }
 
     override fun onStop() {
