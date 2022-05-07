@@ -1,13 +1,17 @@
 package com.example.kltn.Adapter
 
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.app.ProgressDialog
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kltn.Buttom_TV_Act
-import com.example.kltn.TVAct
+import com.example.kltn.Button_TV_Act
+import com.example.kltn.Progress
+import com.example.kltn.R
 import com.example.kltn.databinding.ButtonItemBinding
 
 class ListDeviceAdapter: ListAdapter<String, ListDeviceAdapter.ListDevVH>(ListButtonDiffUtilCallBack()) {
@@ -33,17 +37,22 @@ class ListDeviceAdapter: ListAdapter<String, ListDeviceAdapter.ListDevVH>(ListBu
             binding.tvName = item;
         }
     }
+    private val progress = Progress
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListDevVH {
         return ListDevVH.from(parent)
     }
 
+    @SuppressLint("ResourceType")
     override fun onBindViewHolder(holder: ListDevVH, position: Int) {
         val item = getItem(position)
         holder.bind(item)
         holder.binding.TVType.setOnClickListener {
-            val intent = Intent(it.context,Buttom_TV_Act::class.java)
-            intent.putExtra("name", "TV/$item")
+            progress.context = it.context
+            progress.create()
+            progress.show()
+            val intent = Intent(it.context,Button_TV_Act::class.java)
+            intent.putExtra("name", "TV/${item.uppercase()}")
             it.context.startActivity(intent)
         }
     }

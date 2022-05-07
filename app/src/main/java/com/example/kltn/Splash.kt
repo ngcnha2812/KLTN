@@ -13,15 +13,15 @@ class Splash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.`splash`)
-        val menu = Intent(this,Menu::class.java)
+        val room = Intent(this,Room::class.java)
         handler = Handler(Looper.getMainLooper());
         val runnable: Runnable = object :Runnable {
             override fun run() {
                 finish()
-                startActivity(menu)
+                startActivity(room)
             }
         }
-        handler.postDelayed(runnable,5000);
+        handler.postDelayed(runnable,3000);
 
     }
 }

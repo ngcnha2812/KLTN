@@ -14,10 +14,16 @@
         android:theme="@style/Theme.KLTN"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Room"
+            android:exported="false" />
+        <activity
+            android:name=".ButtonFan"
+            android:exported="false" />
+        <activity
             android:name=".TVAct"
             android:exported="false" />
         <activity
-            android:name=".Buttom_TV_Act"
+            android:name=".Button_TV_Act"
             android:exported="false" />
         <activity
             android:name=".LearnCode"

@@ -1,5 +1,7 @@
 package com.example.kltn
 
+import android.app.Dialog
+import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,7 +9,7 @@ import android.widget.Button
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-class Buttom_TV_Act : AppCompatActivity() {
+class Button_TV_Act : AppCompatActivity() {
 
     private var dataBase = Firebase.database(Constants.databaseURL).reference
     private var mqttClient = MqttConnect
@@ -17,9 +19,8 @@ class Buttom_TV_Act : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_buttom_tv)
+        setContentView(R.layout.activity_button_tv)
         val name = intent.extras?.get("name")
-        Log.d("check","$name")
         mqttClient.Connect("TV")
         dataBase.child("TV/Toshiba/bitnum").get().addOnSuccessListener {
             bitnum = it.value as Long
@@ -58,44 +59,44 @@ class Buttom_TV_Act : AppCompatActivity() {
         val mute: Button = findViewById(R.id.mute)
 
         power.setOnClickListener {
-            if(_power == "PowerOff")
-            dataBase.child("TV/Toshiba/PowerOn").get().addOnSuccessListener {
+            /*if(_power == "PowerOff")
+            dataBase.child("$name/PowerOn").get().addOnSuccessListener {
                 mqttClient.Send("TV", it.value.toString()+"/"+protocol+"/"+bitnum)
                 _power = "PowerOn"
-            }
-            else dataBase.child("TV/Toshiba/PowerOff").get().addOnSuccessListener {
-                mqttClient.Send("TV", it.value.toString()+"/"+protocol+"/"+bitnum)
+            }*/
+            dataBase.child("$name/power").get().addOnSuccessListener {
+                mqttClient.Send("TV", "${it.value.toString()}/$protocol/$bitnum")
                 _power = "PowerOff"
             }
         }
         source.setOnClickListener {
-            dataBase.child("TV/Toshiba/Mode").get().addOnSuccessListener {
-                mqttClient.Send("TV", it.value.toString())
+            dataBase.child("$name/source").get().addOnSuccessListener {
+                mqttClient.Send("TV", "${it.value.toString()}/$protocol/$bitnum")
             }
         }
         chdown.setOnClickListener {
-            dataBase.child("TV/Toshiba/TempDown").get().addOnSuccessListener {
-                mqttClient.Send("TV", it.value.toString())
+            dataBase.child("$name/chdown").get().addOnSuccessListener {
+                mqttClient.Send("TV", "${it.value.toString()}/$protocol/$bitnum")
             }
         }
         chup.setOnClickListener {
-            dataBase.child("TV/Toshiba/TempDown").get().addOnSuccessListener {
-                mqttClient.Send("TV", it.value.toString())
+            dataBase.child("$name/chup").get().addOnSuccessListener {
+                mqttClient.Send("TV", "${it.value.toString()}/$protocol/$bitnum")
             }
         }
         ok.setOnClickListener {
-            dataBase.child("TV/Toshiba/Swing").get().addOnSuccessListener {
-                mqttClient.Send("TV", it.value.toString())
+            dataBase.child("$name/ok").get().addOnSuccessListener {
+                mqttClient.Send("TV","${it.value.toString()}/$protocol/$bitnum")
             }
         }
         menu.setOnClickListener {
-            dataBase.child("TV/Toshiba/HiPower").get().addOnSuccessListener {
-                mqttClient.Send("TV", it.value.toString())
+            dataBase.child("$name/menu").get().addOnSuccessListener {
+                mqttClient.Send("TV", "${it.value.toString()}/$protocol/$bitnum")
             }
         }
         ttv.setOnClickListener {
-            dataBase.child("Customs/fridge/PowerOn").get().addOnSuccessListener {
-                mqttClient.Send("Customs",it.value.toString()+"/"+protocol+"/"+bitnum)
+            dataBase.child("$name/ttv").get().addOnSuccessListener {
+                mqttClient.Send("Customs","${it.value.toString()}/$protocol/$bitnum")
             }
         }
     }
@@ -103,5 +104,10 @@ class Buttom_TV_Act : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         mqttClient.Disconnect()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Progress.dismiss()
     }
 }
