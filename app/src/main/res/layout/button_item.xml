@@ -2,7 +2,7 @@
 <layout>
     <data>
         <variable
-            name="TVName"
+            name="tvName"
             type="String"/>
     </data>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,7 +18,7 @@
         android:backgroundTint="@color/sky"
         android:layout_marginTop="40dp"
         app:cornerRadius="15dp"
-        android:text="@{TVName}"
+        android:text="@{tvName}"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="40dp" />
