@@ -27,8 +27,10 @@ class TVAct : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tvact)
         val listdev: RecyclerView = findViewById(R.id.list_TV)
-        adapter = ListDeviceAdapter()
         model = TVActModel()
+        val extras = "${intent.extras?.get("roomName").toString()}/TV"
+        Log.d("check","$extras")
+        adapter = ListDeviceAdapter(extras)
         val lm = LinearLayoutManager(this)
         database.child("TV").addListenerForSingleValueEvent(object :ValueEventListener{
             override fun onCancelled(error: DatabaseError) {
@@ -40,7 +42,6 @@ class TVAct : AppCompatActivity() {
                 snapshot.children.forEach {
                     listTV.add(it.key!!)
                 }
-                Log.d("check","$listTV")
                 model.postList(listTV)
             }
         })
@@ -49,5 +50,9 @@ class TVAct : AppCompatActivity() {
             listdev.adapter = adapter
             listdev.layoutManager = lm
         })
+        findViewById<Button>(R.id.TV_learn).setOnClickListener {
+            val intent = Intent(this,LearnCode::class.java)
+            startActivity(intent)
+        }
     }
 }

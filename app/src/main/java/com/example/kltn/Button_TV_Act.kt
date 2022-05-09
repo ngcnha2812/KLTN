@@ -21,6 +21,7 @@ class Button_TV_Act : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_button_tv)
         val name = intent.extras?.get("name")
+        Log.d("check","$name")
         mqttClient.Connect("TV")
         dataBase.child("TV/Toshiba/bitnum").get().addOnSuccessListener {
             bitnum = it.value as Long

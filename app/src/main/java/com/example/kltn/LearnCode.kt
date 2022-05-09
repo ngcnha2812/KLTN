@@ -27,9 +27,9 @@ class LearnCode : AppCompatActivity() {
 
         findViewById<Button>(R.id.codeSubmit).setOnClickListener {
             addCode(type.text.toString(),mftName.text.toString(),codeName.text.toString(),code.text.toString())
-            mftName.setText("")
-            codeName.setText("")
-            code.setText("")
+            //mftName.setText("")
+            //codeName.setText("")
+            //code.setText("")
         }
         model.code.observe(this, Observer { receiveCode ->
             code.setText(receiveCode)
@@ -38,7 +38,7 @@ class LearnCode : AppCompatActivity() {
 
     private  fun addCode(type:String,mftName:String,codeName:String,code:String){
         database = Firebase.database(Constants.databaseURL).reference
-        database.child(type).child(mftName).child(codeName).setValue(code).addOnSuccessListener {
+        database.child("$type/$mftName/$codeName").setValue(code).addOnSuccessListener {
             Toast.makeText(this,"Success",Toast.LENGTH_SHORT).show()
         }.addOnFailureListener {
             Toast.makeText(this,"Failed! Try again",Toast.LENGTH_SHORT).show()

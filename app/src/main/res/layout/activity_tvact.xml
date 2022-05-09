@@ -43,6 +43,18 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/TV_learn"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/sky"
+                android:layout_marginTop="20dp"
+                app:cornerRadius="15dp"
+                android:text="Learn"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="40dp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/list_TV"

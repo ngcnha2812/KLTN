@@ -7,24 +7,28 @@
         <entry key="..\:/KLTN/Project/app/src/main/res/layout/activity_main.xml" value="0.22327898550724637" />
         <entry key="..\:/KLTN/Project/app/src/main/res/layout/activity_menu.xml" value="0.1" />
         <entry key="..\:/KLTN/Project/app/src/main/res/layout/splash.xml" value="0.1" />
+        <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/drawable-v24/corner_radius_10dp.xml" value="0.1455" />
         <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/drawable/ic_add.xml" value="0.1455" />
+        <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/drawable/power_icon.xml" value="0.1455" />
         <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_buttom_tv.xml" value="0.264" />
         <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_button_fan.xml" value="0.129981884057971" />
         <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_fan.xml" value="0.1" />
-        <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_learn_code.xml" value="0.1388888888888889" />
+        <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_learn_code.xml" value="0.264" />
         <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_menu.xml" value="0.129981884057971" />
         <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_room.xml" value="0.2" />
-        <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_tvact.xml" value="0.1" />
+        <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_test_device.xml" value="0.264" />
+        <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/activity_tvact.xml" value="0.2" />
         <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/button_item.xml" value="0.2421875" />
         <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/loading.xml" value="0.2421875" />
         <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/room_frag.xml" value="0.2421875" />
         <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/splash.xml" value="0.2421875" />
+        <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/layout/test_device.xml" value="0.2421875" />
         <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/menu/menu_option.xml" value="0.2421875" />
         <entry key="..\:/NVT/KHOALUAN/ANDROID_APP/app/src/main/res/menu/room.xml" value="0.2421875" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16_PREVIEW" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

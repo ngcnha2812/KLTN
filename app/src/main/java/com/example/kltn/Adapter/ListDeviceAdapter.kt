@@ -10,11 +10,15 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kltn.Button_TV_Act
+import com.example.kltn.Constants
 import com.example.kltn.Progress
 import com.example.kltn.R
 import com.example.kltn.databinding.ButtonItemBinding
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
-class ListDeviceAdapter: ListAdapter<String, ListDeviceAdapter.ListDevVH>(ListButtonDiffUtilCallBack()) {
+class ListDeviceAdapter(var extras:String? = null): ListAdapter<String, ListDeviceAdapter.ListDevVH>(ListButtonDiffUtilCallBack()) {
+    private val database = Firebase.database(Constants.databaseURL).reference
     class ListButtonDiffUtilCallBack: DiffUtil.ItemCallback<String>() {
         override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
             return oldItem == newItem
@@ -51,8 +55,8 @@ class ListDeviceAdapter: ListAdapter<String, ListDeviceAdapter.ListDevVH>(ListBu
             progress.context = it.context
             progress.create()
             progress.show()
+            database.child("ROOM/$extras").setValue(item)
             val intent = Intent(it.context,Button_TV_Act::class.java)
-            intent.putExtra("name", "TV/${item.uppercase()}")
             it.context.startActivity(intent)
         }
     }
