@@ -34,7 +34,7 @@ class TVAct : AppCompatActivity() {
         val lm = LinearLayoutManager(this)
         database.child("TV").addListenerForSingleValueEvent(object :ValueEventListener{
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                print(error)
             }
 
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -52,6 +52,7 @@ class TVAct : AppCompatActivity() {
         })
         findViewById<Button>(R.id.TV_learn).setOnClickListener {
             val intent = Intent(this,LearnCode::class.java)
+            intent.putExtra("PATH",extras)
             startActivity(intent)
         }
     }

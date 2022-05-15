@@ -48,6 +48,7 @@
                 android:background="#aab0b3"
                 android:orientation="horizontal">
                 <TextView
+                    android:id="@+id/deviceNo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -58,6 +59,7 @@
                     android:textSize="20dp"
                     android:textColor="@color/white"/>
                 <TextView
+                    android:id="@+id/deviceYes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="YES"

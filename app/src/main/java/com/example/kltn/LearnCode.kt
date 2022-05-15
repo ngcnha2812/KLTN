@@ -18,6 +18,7 @@ class LearnCode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_learn_code)
+        val extras = intent.extras?.get("PATH")
         client.Connect("Learn")
         client.Async(model)
         var type = findViewById<EditText>(R.id.typeName)

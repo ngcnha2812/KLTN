@@ -1,18 +1,15 @@
 package com.example.kltn.Adapter
 
 import android.annotation.SuppressLint
-import android.app.Activity
-import android.app.ProgressDialog
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kltn.Button_TV_Act
 import com.example.kltn.Constants
 import com.example.kltn.Progress
-import com.example.kltn.R
+import com.example.kltn.activities.TestDevice
 import com.example.kltn.databinding.ButtonItemBinding
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -55,8 +52,10 @@ class ListDeviceAdapter(var extras:String? = null): ListAdapter<String, ListDevi
             progress.context = it.context
             progress.create()
             progress.show()
-            database.child("ROOM/$extras").setValue(item)
-            val intent = Intent(it.context,Button_TV_Act::class.java)
+            //database.child("ROOM/$extras").setValue(item)
+            val intent = Intent(it.context, TestDevice::class.java)
+            intent.putExtra("PATH",extras)
+            intent.putExtra("VALUE",item)
             it.context.startActivity(intent)
         }
     }
