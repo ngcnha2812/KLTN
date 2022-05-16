@@ -1,8 +1,10 @@
 package com.example.kltn
 
+import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.content.Context
 
+@SuppressLint("StaticFieldLeak")
 object Progress {
     var context : Context? = null
     lateinit var progress : ProgressDialog

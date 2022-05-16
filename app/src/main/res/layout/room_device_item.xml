@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:id="@+id/roomDevice">
+    android:padding="10dp"
+    android:id="@+id/roomDevice"
+    android:gravity="center">
     <TextView
         android:id="@+id/device"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="24dp"
+        android:background="#e1ebe9"
+        android:gravity="center"
+        android:paddingLeft="10dp"/>
     <TextView
         android:id="@+id/manft"
-        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_weight="1"
+        android:background="#e1ebe9"/>
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:src="@drawable/ic_delete"
+        android:background="#e1ebe9"
+        android:paddingRight="10dp"/>
 
 </LinearLayout>

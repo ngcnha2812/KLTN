@@ -42,7 +42,6 @@ class RoomFragment(var roomName:String?=null):Fragment() {
         database.child("ROOM/${roomName?.uppercase()}").addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 var listDevice = HashMap<String,String>()
-                Log.d("check","${snapshot.value}")
                 if(snapshot.value != null) listDevice = snapshot.value as HashMap<String, String>
                 model.postList(listDevice)
             }
