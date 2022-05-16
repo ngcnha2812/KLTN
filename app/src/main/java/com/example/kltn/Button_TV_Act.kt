@@ -119,6 +119,6 @@ class Button_TV_Act : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        Progress.dismiss()
+        if(Progress.context != null )Progress.dismiss()
     }
 }

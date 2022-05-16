@@ -23,10 +23,11 @@ class TestDevice : AppCompatActivity() {
 
         }
         findViewById<TextView>(R.id.deviceYes).setOnClickListener {
-            if(path!=null) database.child("$path").setValue(item).addOnSuccessListener {
+            if(path!=null) database.child("ROOM/$path").setValue(item).addOnSuccessListener {
                 val intent = Intent(this,Button_TV_Act::class.java)
                 intent.putExtra("PATH","TV/$item")
                 startActivity(intent)
+                finish()
             }
         }
         findViewById<TextView>(R.id.deviceNo).setOnClickListener {

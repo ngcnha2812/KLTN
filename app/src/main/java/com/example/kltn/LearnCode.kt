@@ -18,13 +18,16 @@ class LearnCode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_learn_code)
-        val extras = intent.extras?.get("PATH")
+        val extras = intent.extras?.get("PATH").toString()
         client.Connect("Learn")
         client.Async(model)
         var type = findViewById<EditText>(R.id.typeName)
         var mftName = findViewById<EditText>(R.id.mftName)
         var codeName = findViewById<EditText>(R.id.codeName)
         var code = findViewById<EditText>(R.id.code)
+        val protocol = findViewById<EditText>(R.id.protocol)
+        val freq = findViewById<EditText>(R.id.freq)
+        type.setText(extras.split("/")[1])
 
         findViewById<Button>(R.id.codeSubmit).setOnClickListener {
             addCode(type.text.toString(),mftName.text.toString(),codeName.text.toString(),code.text.toString())
@@ -34,6 +37,12 @@ class LearnCode : AppCompatActivity() {
         }
         model.code.observe(this, Observer { receiveCode ->
             code.setText(receiveCode)
+        })
+        model.protocol.observe(this, Observer {
+            protocol.setText(it)
+        })
+        model.freq.observe(this, Observer {
+            freq.setText(it)
         })
     }
 
