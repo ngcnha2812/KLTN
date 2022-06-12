@@ -28,8 +28,8 @@ class TVAct : AppCompatActivity() {
         setContentView(R.layout.activity_tvact)
         val listdev: RecyclerView = findViewById(R.id.list_TV)
         model = TVActModel()
-        val extras = "${intent.extras?.get("roomName").toString()}/TV"
-        Log.d("check","$extras")
+        val extras = "${intent.extras?.get("roomName").toString().uppercase()}/TV"
+        Log.d("check", extras)
         adapter = ListDeviceAdapter(extras)
         val lm = LinearLayoutManager(this)
         database.child("TV").addListenerForSingleValueEvent(object :ValueEventListener{
@@ -38,7 +38,7 @@ class TVAct : AppCompatActivity() {
             }
 
             override fun onDataChange(snapshot: DataSnapshot) {
-                var listTV = ArrayList<String>()
+                val listTV = ArrayList<String>()
                 snapshot.children.forEach {
                     listTV.add(it.key!!)
                 }

@@ -55,7 +55,7 @@ class ListDeviceAdapter(var extras:String? = null): ListAdapter<String, ListDevi
             //database.child("ROOM/$extras").setValue(item)
             val intent = Intent(it.context, TestDevice::class.java)
             intent.putExtra("PATH",extras)
-            intent.putExtra("VALUE",item)
+            intent.putExtra("VALUE",item.uppercase())
             it.context.startActivity(intent)
         }
     }

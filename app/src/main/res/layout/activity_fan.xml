@@ -18,6 +18,7 @@
             android:id="@+id/fan"
             android:layout_width="200px"
             android:layout_height="200px"
+
             android:src="@drawable/fan" />
 
         <TextView
@@ -26,89 +27,52 @@
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/gabton"
-            android:text="Fan"
+            android:text="TV"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="50dp" />
 
     </LinearLayout>
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="499dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/F_Midea"
+                android:id="@+id/FAN_learn"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="80dp"
                 android:backgroundTint="@color/sky"
-                android:text="Midea"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="40dp"
-                app:cornerRadius="15dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/F_Asia"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="80dp"
-                android:backgroundTint="@color/sky"
-                android:text="Asia"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="40dp"
-                app:cornerRadius="15dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/F_Tefal"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="80dp"
-                android:backgroundTint="@color/sky"
-                android:text="Tefal"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="40dp"
-                app:cornerRadius="15dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/F_Learn"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="80dp"
-                android:backgroundTint="@color/sky"
+                android:layout_marginTop="20dp"
+                app:cornerRadius="15dp"
                 android:text="Learn"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="40dp"
-                app:cornerRadius="15dp" />
+                android:textSize="40dp" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_FAN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
     </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="87dp"
         android:orientation="vertical">
 
         <ImageView
             android:layout_width="200px"
             android:layout_height="200px"
             android:layout_gravity="bottom"
-            android:src="@drawable/penguin"></ImageView>
+            android:src="@drawable/penguin"/>
     </LinearLayout>
 
 </LinearLayout>

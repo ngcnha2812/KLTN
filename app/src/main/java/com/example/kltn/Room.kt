@@ -44,6 +44,10 @@ class Room : AppCompatActivity() {
                 fragment = RoomFragment("Kitchen")
                 currentFragment = "Kitchen"
             }
+            R.id.bed1 -> {
+                fragment = RoomFragment("Bedroom1")
+                currentFragment = "Bedroom1"
+            }
         }
         supportFragmentManager.beginTransaction().replace(R.id.navRoom, fragment).commit()
         drawer.closeDrawer(menu)

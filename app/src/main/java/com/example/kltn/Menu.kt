@@ -14,8 +14,8 @@ class Menu : AppCompatActivity() {
         val tv:ImageView = findViewById(R.id.tv)
         val air:ImageView = findViewById(R.id.air)
 
-        val roomName = intent.extras?.get("roomName").toString()
-        Log.d("check","$roomName")
+        val roomName = intent.extras?.get("roomName").toString().uppercase()
+        Log.d("check",roomName)
         val MeFan = Intent(this,FanAct::class.java)
         fan.setOnClickListener{
             MeFan.putExtra("roomName",roomName)

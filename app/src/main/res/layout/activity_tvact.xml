@@ -27,7 +27,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/gabton"
-            android:text="TV"
+            android:text="FAN"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="50dp" />

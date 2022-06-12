@@ -24,17 +24,19 @@ class LearnCode : AppCompatActivity() {
 
         client.Connect("Learn")
         client.Async(model)
-        var deviceType = findViewById<EditText>(R.id.deviceTypeName)
-        var mftName = findViewById<EditText>(R.id.mftName)
-        var code = findViewById<EditText>(R.id.code)
-        var btnName = findViewById<EditText>(R.id.btnName)
+        val deviceType = findViewById<EditText>(R.id.deviceTypeName)
+        val mftName = findViewById<EditText>(R.id.mftName)
+        val code = findViewById<EditText>(R.id.code)
+        val btnName = findViewById<EditText>(R.id.btnName)
 
         findViewById<Button>(R.id.codeSubmit).setOnClickListener {
             database.child("${deviceType.text.toString().uppercase()}/${mftName.text.toString().uppercase()}/${btnName.text.toString().uppercase()}").setValue(model.recvBuf.value)
+            btnName.setText("")
+            code.setText("")
         }
         model.recvBuf.observe(this, Observer { receiveCode ->
             if(receiveCode != null)
-                code.setText("Code received");
+                code.setText("Code received")
         })
     }
 

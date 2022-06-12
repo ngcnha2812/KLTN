@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kltn.ButtonFan
 import com.example.kltn.Button_TV_Act
 import com.example.kltn.Constants
 import com.example.kltn.Progress
@@ -47,7 +48,12 @@ class RoomDeviceAdapter : ListAdapter<Map.Entry<String, String>, RoomDeviceAdapt
         val item = getItem(position)
         holder.bind(item)
         holder.binding.roomDevice.setOnClickListener {
-            val intent = Intent(it.context,Button_TV_Act::class.java)
+            var intent = Intent()
+            when (item.key) {
+                "TV" -> intent = Intent(it.context,Button_TV_Act::class.java)
+                "FAN" ->  intent = Intent(it.context,ButtonFan::class.java)
+                //"AC" ->  intent = Intent(it.context,ButtonAC::class.java)
+            }
             intent.putExtra("PATH","${item.key.uppercase()}/${item.value.uppercase()}")
             it.context.startActivity(intent)
         }
