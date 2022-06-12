@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
+import com.example.kltn.activities.ACAct
 
 class Menu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +26,11 @@ class Menu : AppCompatActivity() {
         tv.setOnClickListener{
             MeTV.putExtra("roomName",roomName)
             startActivity(MeTV)
+        }
+        val MeAC = Intent(this,ACAct::class.java)
+        air.setOnClickListener {
+            MeAC.putExtra("roomName",roomName)
+            startActivity(MeAC)
         }
     }
 

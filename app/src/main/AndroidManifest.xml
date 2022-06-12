@@ -14,6 +14,12 @@
         android:theme="@style/Theme.KLTN"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.Button_AC_Act"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ACAct"
+            android:exported="false" />
+        <activity
             android:name=".activities.TestDevice"
             android:exported="false" />
         <activity
