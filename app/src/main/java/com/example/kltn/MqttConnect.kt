@@ -1,9 +1,12 @@
 package com.example.kltn
 
+import android.util.Log
 import androidx.annotation.NonNull
 import com.hivemq.client.mqtt.MqttClient
 import com.hivemq.client.mqtt.MqttGlobalPublishFilter
 import com.hivemq.client.mqtt.mqtt5.Mqtt5BlockingClient
+import org.json.JSONArray
+import java.nio.ByteBuffer
 import java.nio.charset.StandardCharsets.UTF_8
 import java.util.function.Consumer
 
@@ -30,16 +33,15 @@ object MqttConnect  {
             .send();
         return client
     }
-    public fun Send(topic:String,message:String) {
+    public fun Send(topic:String,message:ByteArray) {
         client.publishWith()
             .topic(topic)
-            .payload(UTF_8.encode(message))
+            .payload(message)
             .send();
     }
     public fun Async(model:LearnModel){
         client.toAsync().publishes(MqttGlobalPublishFilter.ALL, Consumer {
-            System.out.println("Received message: " + it.getTopic() + " -> " + UTF_8.decode(it.getPayload().get()));
-            model.addCode(it.topic.toString(), UTF_8.decode(it.payload.get()).toString())
+            model.addCode(JSONArray(it.payloadAsBytes).toString());
         })
     }
 

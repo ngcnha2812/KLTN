@@ -11,22 +11,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <TextView
-            android:layout_marginTop="30dp"
-            android:layout_width="300dp"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:text="Device"/>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
-            <EditText
-                android:id="@+id/typeName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
-        <TextView
             android:layout_width="300dp"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
@@ -45,15 +29,31 @@
             android:layout_width="300dp"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
+            android:text="Device Type"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <EditText
+                android:id="@+id/deviceTypeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
             android:text="Button Name"/>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
             <EditText
-                android:id="@+id/codeName"
+                android:id="@+id/btnName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#f21b0c"
                 android:inputType="text"/>
         </com.google.android.material.textfield.TextInputLayout>
         <TextView
@@ -69,36 +69,7 @@
                 android:id="@+id/code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
-        <TextView
-            android:layout_width="300dp"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:text="Protocol"/>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
-            <EditText
-                android:id="@+id/protocol"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
-        <TextView
-            android:layout_width="300dp"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:text="Frequency"/>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
-            <EditText
-                android:id="@+id/freq"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:textColor="#f21b0c"
                 android:inputType="text"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.button.MaterialButton

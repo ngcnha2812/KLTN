@@ -18,7 +18,6 @@
             android:id="@+id/fan"
             android:layout_width="200px"
             android:layout_height="200px"
-
             android:src="@drawable/fan" />
 
         <TextView
@@ -45,7 +44,6 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/F_Midea"
                 android:layout_width="250dp"

@@ -8,27 +8,19 @@ import android.util.Log
 import android.widget.Button
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import org.json.JSONArray
 
 class Button_TV_Act : AppCompatActivity() {
 
-    private var dataBase = Firebase.database(Constants.databaseURL).reference
-    private var mqttClient = MqttConnect
-    private var _power: String = "POWEROFF"
-    private var bitnum: Long = 0;
-    private var protocol: String = "";
+    private var database = Firebase.database(Constants.databaseURL).reference
+    private var client = MqttConnect
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_button_tv)
-        val name = intent.extras?.get("PATH")
-        Log.d("check", "$name")
-        mqttClient.Connect("TV")
-        dataBase.child("TV/TOSHIBA/BITNUM").get().addOnSuccessListener {
-            if(it.value != null) bitnum = it.value as Long
-        }
-        dataBase.child("TV/TOSHIBA/PROTOCOL").get().addOnSuccessListener {
-            if(it.value != null) protocol = (it.value as String).uppercase()
-        }
+        val path = intent.extras?.get("PATH").toString()
+        client.Connect("TV")
+
 
         val backtv: Button = findViewById(R.id.backtv)
         val menu: Button = findViewById(R.id.menu)
@@ -60,65 +52,55 @@ class Button_TV_Act : AppCompatActivity() {
         val mute: Button = findViewById(R.id.mute)
 
         power.setOnClickListener {
-            /*if(_power == "PowerOff")
-            dataBase.child("$name/PowerOn").get().addOnSuccessListener {
-                mqttClient.Send("TV", it.value.toString()+"/"+protocol+"/"+bitnum)
-                _power = "PowerOn"
-            }*/
-            dataBase.child("$name/POWERON").get().addOnSuccessListener {
-                mqttClient.Send("TV", "${it.value.toString()}/$protocol/$bitnum")
-                _power = "POWERON"
-            }
+            sendCode("$path/POWER","TV")
         }
         source.setOnClickListener {
-            dataBase.child("$name/SOURCE").get().addOnSuccessListener {
-                mqttClient.Send("TV", "${it.value.toString()}/$protocol/$bitnum")
-            }
+            sendCode("$path/SOURCE","TV")
         }
         chdown.setOnClickListener {
-            dataBase.child("$name/CHDOWN").get().addOnSuccessListener {
-                mqttClient.Send("TV", "${it.value.toString()}/$protocol/$bitnum")
-            }
+            sendCode("$path/CHDOWN","TV")
         }
         chup.setOnClickListener {
-            dataBase.child("$name/CHUP").get().addOnSuccessListener {
-                mqttClient.Send("TV", "${it.value.toString()}/$protocol/$bitnum")
-            }
+            sendCode("$path/CHUP","TV")
         }
         ok.setOnClickListener {
-            dataBase.child("$name/OK").get().addOnSuccessListener {
-                mqttClient.Send("TV", "${it.value.toString()}/$protocol/$bitnum")
-            }
+            sendCode("$path/OK","TV")
         }
         menu.setOnClickListener {
-            dataBase.child("$name/MENU").get().addOnSuccessListener {
-                mqttClient.Send("TV", "${it.value.toString()}/$protocol/$bitnum")
-            }
+            sendCode("$path/MENU","TV")
         }
         ttv.setOnClickListener {
-            dataBase.child("$name/TTV").get().addOnSuccessListener {
-                mqttClient.Send("TV", "${it.value.toString()}/$protocol/$bitnum")
-            }
+            sendCode("$path/TTV","TV")
         }
         voldown.setOnClickListener {
-            dataBase.child("$name/VOLDOWN").get().addOnSuccessListener {
-                mqttClient.Send("TV", "${it.value.toString()}/$protocol/$bitnum")
-            }
+            sendCode("$path/VOLDOWN","TV")
         }
         volup.setOnClickListener {
-            dataBase.child("$name/VOLUP").get().addOnSuccessListener {
-                mqttClient.Send("TV", "${it.value.toString()}/$protocol/$bitnum")
-            }
+            sendCode("$path/VOLUP","TV")
         }
     }
 
     override fun onStop() {
         super.onStop()
-        mqttClient.Disconnect()
+        client.Disconnect()
     }
 
     override fun onStart() {
         super.onStart()
         if(Progress.context != null )Progress.dismiss()
+    }
+
+    private fun sendCode(databasePath:String,topic:String)
+    {
+        database.child(databasePath).get().addOnSuccessListener {
+            var jsonArray = JSONArray();
+            if(it.value != null)
+               jsonArray  = JSONArray(it.value.toString())
+            var byteArray = ByteArray(jsonArray.length())
+            for(i:Int in 0 until jsonArray.length()){
+                byteArray[i] = jsonArray[i].toString().toByte()
+            }
+            if(byteArray.isNotEmpty()) client.Send(topic,byteArray)
+        }
     }
 }

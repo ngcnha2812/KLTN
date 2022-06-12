@@ -5,10 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.kltn.Button_TV_Act
-import com.example.kltn.Constants
-import com.example.kltn.Progress
-import com.example.kltn.R
+import com.example.kltn.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
@@ -24,8 +21,7 @@ class TestDevice : AppCompatActivity() {
         }
         findViewById<TextView>(R.id.deviceYes).setOnClickListener {
             if(path!=null) database.child("ROOM/$path").setValue(item.toString().uppercase()).addOnSuccessListener {
-                val intent = Intent(this,Button_TV_Act::class.java)
-                intent.putExtra("PATH","TV/$item")
+                val intent = Intent(this,Room::class.java)
                 startActivity(intent)
                 finish()
             }
