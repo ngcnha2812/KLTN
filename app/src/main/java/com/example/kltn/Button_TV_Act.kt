@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import org.json.JSONArray
@@ -50,6 +51,7 @@ class Button_TV_Act : AppCompatActivity() {
         val ttv: Button = findViewById(R.id.ttv)
         val num0: Button = findViewById(R.id.num0)
         val mute: Button = findViewById(R.id.mute)
+        findViewById<TextView>(R.id.manft_tv_name).text = path.split("/")[1]
 
         power.setOnClickListener {
             sendCode("$path/POWER","TV")
