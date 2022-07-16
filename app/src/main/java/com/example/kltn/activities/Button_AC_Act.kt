@@ -4,6 +4,8 @@ package com.example.kltn.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.kltn.Constants
 import com.example.kltn.Model.DetailModel
@@ -27,7 +29,24 @@ class Button_AC_Act : AppCompatActivity() {
         client.Async(model)
 
         findViewById<TextView>(R.id.manft_ac_name).text = path.split("/")[1]
-
+        findViewById<LinearLayout>(R.id.AC_PowerOn).setOnClickListener {
+            sendCode("$path/POWERON","AC")
+        }
+        findViewById<LinearLayout>(R.id.AC_PowerOff).setOnClickListener {
+            sendCode("$path/POWEROFF","AC")
+        }
+        findViewById<ImageView>(R.id.AC_FanUp).setOnClickListener {
+            sendCode("$path/FANUP","AC")
+        }
+        findViewById<ImageView>(R.id.AC_FanDown).setOnClickListener {
+            sendCode("$path/FANDOWN","AC")
+        }
+        findViewById<ImageView>(R.id.AC_TempUp).setOnClickListener {
+            sendCode("$path/TEMPUP","AC")
+        }
+        findViewById<ImageView>(R.id.AC_TempDown).setOnClickListener {
+            sendCode("$path/TEMPDOWN","AC")
+        }
         findViewById<Button>(R.id.GetACDetail).setOnClickListener {
             findViewById<TextView>(R.id.ACDetail).text = model.detail.value
             findViewById<TextView>(R.id.ACDetail).setTextColor(0xFF0000)
