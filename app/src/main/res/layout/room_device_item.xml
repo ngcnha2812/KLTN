@@ -12,15 +12,25 @@
         android:layout_height="24dp"
         android:background="#e1ebe9"
         android:gravity="center"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"/>
     <TextView
         android:id="@+id/manft"
         android:gravity="center"
         android:layout_width="0dp"
         android:layout_height="24dp"
         android:layout_weight="1"
-        android:background="#e1ebe9"/>
+        android:background="#e1ebe9"
+        android:textColor="@color/black"/>
     <ImageView
+        android:id="@+id/DevInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_info"
+        android:background="#e1ebe9"
+        android:paddingRight="10dp"/>
+    <ImageView
+        android:id="@+id/DevDel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_delete"

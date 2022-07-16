@@ -24,7 +24,7 @@ class TestDevice : AppCompatActivity() {
         client.Connect(deviceName)
         findViewById<ImageView>(R.id.test_power).setOnClickListener {
             database.child("$deviceName/$item/POWER").get().addOnSuccessListener {
-                var jsonArray = JSONArray();
+                var jsonArray = JSONArray()
                 if(it.value != null)
                     jsonArray  = JSONArray(it.value.toString())
                 val byteArray = ByteArray(jsonArray.length())

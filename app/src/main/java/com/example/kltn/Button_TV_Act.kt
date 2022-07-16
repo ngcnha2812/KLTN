@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import androidx.lifecycle.Observer
+import com.example.kltn.Model.DetailModel
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import org.json.JSONArray
@@ -15,12 +17,15 @@ class Button_TV_Act : AppCompatActivity() {
 
     private var database = Firebase.database(Constants.databaseURL).reference
     private var client = MqttConnect
+    private var model = DetailModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_button_tv)
         val path = intent.extras?.get("PATH").toString()
         client.Connect("TV")
+        client.Subscribe("DETAIL")
+        client.Async(model)
 
 
         val backtv: Button = findViewById(R.id.backtv)
@@ -79,6 +84,11 @@ class Button_TV_Act : AppCompatActivity() {
         }
         volup.setOnClickListener {
             sendCode("$path/VOLUP","TV")
+        }
+
+        findViewById<Button>(R.id.GetDetail).setOnClickListener {
+            findViewById<TextView>(R.id.DevDetail).text = model.detail.value
+            findViewById<TextView>(R.id.DevDetail).setTextColor(0xFF0000)
         }
     }
 

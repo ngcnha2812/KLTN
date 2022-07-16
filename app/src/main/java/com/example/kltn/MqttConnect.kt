@@ -2,6 +2,8 @@ package com.example.kltn
 
 import android.util.Log
 import androidx.annotation.NonNull
+import com.example.kltn.Model.DetailModel
+import com.google.common.eventbus.Subscribe
 import com.hivemq.client.mqtt.MqttClient
 import com.hivemq.client.mqtt.MqttGlobalPublishFilter
 import com.hivemq.client.mqtt.mqtt5.Mqtt5BlockingClient
@@ -28,11 +30,15 @@ object MqttConnect  {
             .password(UTF_8.encode(password))
             .applySimpleAuth()
             .send();
+        return client
+    }
+    fun Subscribe(topic:String)
+    {
         client.subscribeWith()
             .topicFilter(topic)
             .send();
-        return client
     }
+
     public fun Send(topic:String,message:ByteArray) {
         client.publishWith()
             .topic(topic)
@@ -45,9 +51,11 @@ object MqttConnect  {
         })
     }
 
-    public fun Async(){
+    public fun Async(model:DetailModel){
+        var Detail = ""
         client.toAsync().publishes(MqttGlobalPublishFilter.ALL, Consumer {
             System.out.println("Received message: " + it.getTopic() + " -> " + UTF_8.decode(it.getPayload().get()));
+            model.getDetail(UTF_8.decode(it.getPayload().get()).toString())
             })
     }
     public fun Disconnect(){

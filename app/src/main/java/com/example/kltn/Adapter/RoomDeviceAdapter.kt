@@ -48,7 +48,7 @@ class RoomDeviceAdapter : ListAdapter<Map.Entry<String, String>, RoomDeviceAdapt
     override fun onBindViewHolder(holder: RoomDevVH, position: Int) {
         val item = getItem(position)
         holder.bind(item)
-        holder.binding.roomDevice.setOnClickListener {
+        holder.binding.manft.setOnClickListener {
             var intent = Intent()
             when (item.key) {
                 "TV" -> intent = Intent(it.context,Button_TV_Act::class.java)
@@ -57,6 +57,10 @@ class RoomDeviceAdapter : ListAdapter<Map.Entry<String, String>, RoomDeviceAdapt
             }
             intent.putExtra("PATH","${item.key.uppercase()}/${item.value.uppercase()}")
             it.context.startActivity(intent)
+        }
+
+        holder.binding.DevInfo.setOnClickListener {
+
         }
     }
 }
