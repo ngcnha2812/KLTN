@@ -23,6 +23,7 @@ class LearnCode : AppCompatActivity() {
         setContentView(R.layout.activity_learn_code)
 
         client.Connect("Learn")
+        client.Subscribe("Learn")
         client.Async(model)
         val deviceType = findViewById<EditText>(R.id.deviceTypeName)
         val mftName = findViewById<EditText>(R.id.mftName)

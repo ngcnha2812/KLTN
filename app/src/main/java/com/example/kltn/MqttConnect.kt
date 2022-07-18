@@ -47,12 +47,14 @@ object MqttConnect  {
     }
     public fun Async(model:LearnModel){
         client.toAsync().publishes(MqttGlobalPublishFilter.ALL, Consumer {
+            Log.d("check", it.payloadAsBytes.toString())
             model.addCode(JSONArray(it.payloadAsBytes).toString());
         })
     }
 
     public fun Async(model:DetailModel){
         var Detail = ""
+        Log.d("check", "fggfh")
         client.toAsync().publishes(MqttGlobalPublishFilter.ALL, Consumer {
             System.out.println("Received message: " + it.getTopic() + " -> " + UTF_8.decode(it.getPayload().get()));
             model.getDetail(UTF_8.decode(it.getPayload().get()).toString())
