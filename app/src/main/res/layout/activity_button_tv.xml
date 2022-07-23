@@ -405,25 +405,6 @@
                             app:icon="@drawable/mute_icon" />
                     </TableRow>
                 </TableLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <TextView
-                        android:id="@+id/DevDetail"
-                        android:textColor="@color/white"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"/>
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/GetDetail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Get Detail"
-                        android:textColor="@color/white"/>
-
-                </LinearLayout>
             </LinearLayout>
         </ScrollView>
 

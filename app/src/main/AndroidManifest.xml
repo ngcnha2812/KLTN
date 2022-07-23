@@ -14,6 +14,9 @@
         android:theme="@style/Theme.KLTN"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.Custom_Btn"
+            android:exported="false" />
+        <activity
             android:name=".activities.DeviceDetail"
             android:exported="false" />
         <activity

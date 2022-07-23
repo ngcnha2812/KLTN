@@ -19,14 +19,11 @@ import org.json.JSONArray
 class Button_AC_Act : AppCompatActivity() {
     private var database = Firebase.database(Constants.databaseURL).reference
     private var client = MqttConnect
-    private var model = DetailModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_button_ac)
         val path = intent.extras?.get("PATH").toString()
         client.Connect("AC")
-        client.Subscribe("DETAIL")
-        client.Async(model)
 
         findViewById<TextView>(R.id.manft_ac_name).text = path.split("/")[1]
         findViewById<LinearLayout>(R.id.AC_PowerOn).setOnClickListener {
@@ -45,11 +42,7 @@ class Button_AC_Act : AppCompatActivity() {
             sendCode("$path/TEMPUP","AC")
         }
         findViewById<ImageView>(R.id.AC_TempDown).setOnClickListener {
-            sendCode("$path/TEMPDOWN","AC")
-        }
-        findViewById<Button>(R.id.GetACDetail).setOnClickListener {
-            findViewById<TextView>(R.id.ACDetail).text = model.detail.value
-            findViewById<TextView>(R.id.ACDetail).setTextColor(0xFF0000)
+            sendCode("$path/TEMPDOWN", "AC")
         }
     }
 

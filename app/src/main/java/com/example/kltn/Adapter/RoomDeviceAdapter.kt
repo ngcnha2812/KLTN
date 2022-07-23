@@ -11,6 +11,7 @@ import com.example.kltn.Button_TV_Act
 import com.example.kltn.Constants
 import com.example.kltn.Progress
 import com.example.kltn.activities.Button_AC_Act
+import com.example.kltn.activities.Custom_Btn
 import com.example.kltn.databinding.RoomDeviceItemBinding
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -54,6 +55,7 @@ class RoomDeviceAdapter : ListAdapter<Map.Entry<String, String>, RoomDeviceAdapt
                 "TV" -> intent = Intent(it.context,Button_TV_Act::class.java)
                 "FAN" ->  intent = Intent(it.context,ButtonFan::class.java)
                 "AC" ->  intent = Intent(it.context, Button_AC_Act::class.java)
+                "PIC24" -> intent = Intent(it.context,Custom_Btn::class.java)
             }
             intent.putExtra("PATH","${item.key.uppercase()}/${item.value.uppercase()}")
             it.context.startActivity(intent)
